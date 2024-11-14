@@ -1,0 +1,24 @@
+<div class="home-container">
+    <h2>Albums</h2>
+  <!-- Affiche uniquement si la liste des albums est vide -->
+<div *ngIf="albums.length === 0">
+    <p>Aucun album disponible pour le moment.</p>
+    <button pButton label="Créer un album" icon="pi pi-plus" (click)="navigateToCreateAlbum()"></button>
+  </div>
+  
+  <!-- Affiche lorsque des albums sont disponibles -->
+  <div *ngIf="albums.length > 0">
+    <div class="album-list">
+      <div *ngFor="let album of albums" class="album-card">
+        <h4>{{ album.name }}</h4>
+        <p>Nombre de photos: {{ album.photoCount || 0 }}</p>
+        <button [routerLink]="['/album', album.id]" class="btn-view-album">
+          Voir l'album
+        </button>
+      </div>
+    </div>
+  </div>
+  
+    
+  </div>
+  

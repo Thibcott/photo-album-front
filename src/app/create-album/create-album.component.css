@@ -1,0 +1,26 @@
+.create-album-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .photo-container {
+    margin-top: 20px;
+  }
+  
+  .p-field label {
+    font-weight: bold;
+  }
+  
+  .p-d-flex {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .p-d-flex li {
+    list-style: none;
+    text-align: center;
+  }
+  

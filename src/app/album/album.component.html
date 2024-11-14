@@ -1,0 +1,10 @@
+<div *ngIf="album">
+    <h2>{{ album.name }}</h2>
+    <div class="photo-list">
+      <div *ngFor="let photo of photos" class="photo-card">
+        <img [src]="photo.url" alt="photo" class="photo-img" />
+      </div>
+    </div>
+    <button pButton label="Ajouter une photo" icon="pi pi-plus" [routerLink]="['/album', album.id, 'add-photo']"></button>
+  </div>
+  

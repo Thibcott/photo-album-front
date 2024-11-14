@@ -1,0 +1,43 @@
+<div class="create-album-container">
+  <h2>Créer un album avec des photos</h2>
+
+  <form (ngSubmit)="onSubmit()" #albumForm="ngForm">
+    
+    <!-- Nom de l'album -->
+    <div class="p-field">
+      <label for="albumName">Nom de l'album</label>
+      <input id="albumName" type="text" pInputText [(ngModel)]="album.name" name="albumName" required />
+    </div>
+  
+    <!-- Photo -->
+    <div class="photo-container">
+      <div class="p-field">
+        <label for="image">Télécharger une image</label>
+        <input type="file" id="image" (change)="onFileChange($event)" required />
+      </div>
+  
+      <!-- Commentaire -->
+      <div class="p-field">
+        <label for="comment">Commentaire de la photo</label>
+        <input type="text" id="comment" pInputText [(ngModel)]="currentPhoto.comment" name="comment" required />
+      </div>
+  
+      <!-- Ajouter une photo -->
+      <button type="button" pButton label="Ajouter la photo" icon="pi pi-image" (click)="addPhoto()"></button>
+    </div>
+  
+    <!-- Liste des photos ajoutées -->
+    <div *ngIf="album.photos.length > 0">
+      <h3>Photos ajoutées</h3>
+      <ul class="p-d-flex p-flex-wrap">
+        <li *ngFor="let photo of album.photos" class="p-mr-2 p-mb-2">
+          <img [src]="photo.imageUrl" alt="Photo" width="100" />
+          <p>{{ photo.comment }}</p>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Bouton de soumission -->
+    <button type="submit" pButton label="Créer l'album" icon="pi pi-check"></button>
+  </form>
+</div>

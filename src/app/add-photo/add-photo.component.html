@@ -1,0 +1,12 @@
+<div class="add-photo-container">
+    <h2>Ajouter une photo à l'album</h2>
+  
+    <form (ngSubmit)="addPhoto()">
+      <div class="form-group">
+        <label for="photo">Choisir une photo</label>
+        <input id="photo" type="file" (change)="onFileChange($event)" />
+      </div>
+      <button pButton type="submit" label="Ajouter la photo" icon="pi pi-check" [disabled]="!selectedFile"></button>
+    </form>
+  </div>
+  
